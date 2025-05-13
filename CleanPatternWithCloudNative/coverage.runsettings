@@ -1,0 +1,13 @@
+﻿<RunSettings>
+    <DataCollectionRunSettings>
+        <DataCollectors>
+            <DataCollector friendlyName="XPlat code coverage">
+                <Configuration>
+                    <Format>cobertura</Format>
+                    <Exclude>[CleanPatternWithCloudNative.Infrastructure]CleanPatternWithCloudNative.Infrastructure.Migrations.*</Exclude>
+                    <Output>./.coverage/coverage.cobertura.xml</Output>
+                </Configuration>
+            </DataCollector>
+        </DataCollectors>
+    </DataCollectionRunSettings>
+</RunSettings>

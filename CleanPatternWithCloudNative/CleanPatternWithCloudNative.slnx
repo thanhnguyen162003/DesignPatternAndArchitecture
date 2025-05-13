@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/components/">
+    <File Path="components/configstore.yaml" />
+    <File Path="components/cron.yaml" />
+    <File Path="components/pubsub.yaml" />
+    <File Path="components/secretstore.yaml" />
+    <File Path="components/statestore.yaml" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="coverage.runsettings" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="Nuget.config" />
+    <File Path="SecretsStore/secrets.json" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/CleanPatternWithCloudNative.Api/CleanPatternWithCloudNative.Api.csproj" />
+    <Project Path="src/CleanPatternWithCloudNative.Application/CleanPatternWithCloudNative.Application.csproj" />
+    <Project Path="src/CleanPatternWithCloudNative.Domain/CleanPatternWithCloudNative.Domain.csproj" />
+    <Project Path="src/CleanPatternWithCloudNative.Infrastructure/CleanPatternWithCloudNative.Infrastructure.csproj" />
+    <Project Path="src/CleanPatternWithCloudNative.MigrationService/CleanPatternWithCloudNative.MigrationService.csproj" />
+  </Folder>
+</Solution>

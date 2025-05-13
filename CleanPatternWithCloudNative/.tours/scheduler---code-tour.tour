@@ -1,0 +1,45 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Scheduler - Code Tour",
+  "steps": [
+    {
+      "title": "Welcome",
+      "description": "Welcome to the Scheduler tour"
+    },
+    {
+      "file": "src/CleanPatternWithCloudNative.Api/Controllers/Bindings/BindingsController.cs",
+      "description": "Create an endpoint, that needs to be called ons chedule basis",
+      "line": 9
+    },
+    {
+      "file": "components/cron.yaml",
+      "description": "Create a DAPR component",
+      "line": 7
+    },
+    {
+      "file": "components/cron.yaml",
+      "description": "Specify the schedule details",
+      "line": 11
+    },
+    {
+      "file": "components/cron.yaml",
+      "description": "Add the created endpoint, to be called",
+      "line": 13
+    },
+    {
+      "file": "src/CleanPatternWithCloudNative.AppHost/Program.cs",
+      "description": "Register the dapr component through Aspire",
+      "line": 31
+    },
+    {
+      "file": "src/CleanPatternWithCloudNative.AppHost/Program.cs",
+      "description": "Remember the name must match from the components yaml file",
+      "line": 27
+    },
+    {
+      "file": "src/CleanPatternWithCloudNative.Api/Controllers/Bindings/BindingsController.cs",
+      "description": "The endpoint will be called as per the defined schedule",
+      "line": 10
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.2.1" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>9c581a4d-2f70-446c-8546-6c4cbfbc8f7b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.1" />
+    <PackageReference Include="Aspire.Hosting.Kafka" Version="9.2.1" />
+	<PackageReference Include="Aspire.Hosting.Redis" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Dapr" Version="9.4.0" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Ollama" Version="9.4.0" />
+    <PackageReference Include="CommunityToolkit.Aspire.MassTransit.RabbitMQ" Version="9.4.0" />
+	<PackageReference Include="Aspire.Hosting.PostgreSQL" />
+	<PackageReference Include="NapalmCodes.Aspire.Hosting.Krakend" Version="2.0.3" />
+  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.Api\CleanPatternWithCloudNative.Api.csproj" />
+		<ProjectReference Include="..\CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.MigrationService\CleanPatternWithCloudNative.MigrationService.csproj" />
+	</ItemGroup>
+</Project>

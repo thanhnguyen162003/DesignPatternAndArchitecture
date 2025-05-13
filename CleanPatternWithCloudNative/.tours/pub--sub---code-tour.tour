@@ -1,0 +1,20 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Pub / Sub - Code Tour",
+  "steps": [
+    {
+      "title": "Welcome",
+      "description": "Welcome to the Pub / Sub Tour"
+    },
+    {
+      "file": "src/CleanPatternWithCloudNative.Application/PubSub/Commands/PublishProduct/PublishProductCommandHandler.cs",
+      "description": "- To publish a message, call `DaprClient.PublishEventAsync` method\r\n- Specify the `PubSubName` and the `Topic`\r\n- Pass the message object to publish",
+      "line": 20
+    },
+    {
+      "file": "src/CleanPatternWithCloudNative.Api/Controllers/Subscriber/SubscriberController.cs",
+      "description": "To `Subscribe`\r\n- Simply add the `Topic` attribute\r\n- Pass the `PubSubName` and the `Topic` that was used during publish\r\n- Make it a `HttpPost` and receive the message from body",
+      "line": 15
+    }
+  ]
+}

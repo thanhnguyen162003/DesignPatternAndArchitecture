@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36017.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternAndArchitecture.AppHost", "DesignPatternAndArchitecture.AppHost\DesignPatternAndArchitecture.AppHost.csproj", "{C7FA9CAA-3ACC-4ECD-B85A-C01D850A2F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternAndArchitecture.ServiceDefaults", "DesignPatternAndArchitecture.ServiceDefaults\DesignPatternAndArchitecture.ServiceDefaults.csproj", "{399C93FD-A23B-59D6-FE4E-1AC5DD051307}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CleanArchitectureApi", "CleanArchitectureApi", "{A82EE703-7070-A323-3F45-A89475DF9A63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VerticalSlideArchitectureApi", "VerticalSlideArchitectureApi", "{4E71EFC4-6766-84C7-2E67-D62F57D22D73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservice", "Microservice", "{35FC648C-244F-61BA-7BAF-5698EF070C1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanPatternWithCloudNative.Api", "CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.Api\CleanPatternWithCloudNative.Api.csproj", "{2DF46939-CB31-4800-A385-0A516FC7DF72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanPatternWithCloudNative.Application", "CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.Application\CleanPatternWithCloudNative.Application.csproj", "{CE6EFCB6-8E2A-4F87-A9CA-223A6AC26CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanPatternWithCloudNative.Domain", "CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.Domain\CleanPatternWithCloudNative.Domain.csproj", "{831259D5-6CFC-46EC-B443-08C5515C1E92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanPatternWithCloudNative.Infrastructure", "CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.Infrastructure\CleanPatternWithCloudNative.Infrastructure.csproj", "{5E28CAFE-9653-4E55-875E-07C7DD528194}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanPatternWithCloudNative.MigrationService", "CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.MigrationService\CleanPatternWithCloudNative.MigrationService.csproj", "{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KrakendApiGateway", "KrakendApiGateway", "{33DB8675-A466-794B-963E-43374848BBF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{9CB30875-8FD2-9B9E-65BD-A92594FC2CD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{BDF868A3-B76F-2C94-B7D2-C88EA1CC23CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7FA9CAA-3ACC-4ECD-B85A-C01D850A2F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FA9CAA-3ACC-4ECD-B85A-C01D850A2F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FA9CAA-3ACC-4ECD-B85A-C01D850A2F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FA9CAA-3ACC-4ECD-B85A-C01D850A2F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{399C93FD-A23B-59D6-FE4E-1AC5DD051307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399C93FD-A23B-59D6-FE4E-1AC5DD051307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399C93FD-A23B-59D6-FE4E-1AC5DD051307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399C93FD-A23B-59D6-FE4E-1AC5DD051307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF46939-CB31-4800-A385-0A516FC7DF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF46939-CB31-4800-A385-0A516FC7DF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF46939-CB31-4800-A385-0A516FC7DF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF46939-CB31-4800-A385-0A516FC7DF72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6EFCB6-8E2A-4F87-A9CA-223A6AC26CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6EFCB6-8E2A-4F87-A9CA-223A6AC26CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6EFCB6-8E2A-4F87-A9CA-223A6AC26CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6EFCB6-8E2A-4F87-A9CA-223A6AC26CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{831259D5-6CFC-46EC-B443-08C5515C1E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831259D5-6CFC-46EC-B443-08C5515C1E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831259D5-6CFC-46EC-B443-08C5515C1E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831259D5-6CFC-46EC-B443-08C5515C1E92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E28CAFE-9653-4E55-875E-07C7DD528194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E28CAFE-9653-4E55-875E-07C7DD528194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E28CAFE-9653-4E55-875E-07C7DD528194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E28CAFE-9653-4E55-875E-07C7DD528194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DF46939-CB31-4800-A385-0A516FC7DF72} = {A82EE703-7070-A323-3F45-A89475DF9A63}
+		{CE6EFCB6-8E2A-4F87-A9CA-223A6AC26CF6} = {A82EE703-7070-A323-3F45-A89475DF9A63}
+		{831259D5-6CFC-46EC-B443-08C5515C1E92} = {A82EE703-7070-A323-3F45-A89475DF9A63}
+		{5E28CAFE-9653-4E55-875E-07C7DD528194} = {A82EE703-7070-A323-3F45-A89475DF9A63}
+		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E} = {A82EE703-7070-A323-3F45-A89475DF9A63}
+		{33DB8675-A466-794B-963E-43374848BBF3} = {35FC648C-244F-61BA-7BAF-5698EF070C1C}
+		{9CB30875-8FD2-9B9E-65BD-A92594FC2CD9} = {35FC648C-244F-61BA-7BAF-5698EF070C1C}
+		{BDF868A3-B76F-2C94-B7D2-C88EA1CC23CC} = {35FC648C-244F-61BA-7BAF-5698EF070C1C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53BB6971-D5F3-424B-9D91-17F2CF6FB044}
+	EndGlobalSection
+EndGlobal
