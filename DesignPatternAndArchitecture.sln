@@ -24,10 +24,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanPatternWithCloudNative.MigrationService", "CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.MigrationService\CleanPatternWithCloudNative.MigrationService.csproj", "{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KrakendApiGateway", "KrakendApiGateway", "{33DB8675-A466-794B-963E-43374848BBF3}"
+	ProjectSection(SolutionItems) = preProject
+		krakend.json = krakend.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{9CB30875-8FD2-9B9E-65BD-A92594FC2CD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{BDF868A3-B76F-2C94-B7D2-C88EA1CC23CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaProducer", "KafkaProducer\KafkaProducer.csproj", "{24BD428E-23BA-24D7-F811-9B0617AC0EE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer", "KafkaConsumer\KafkaConsumer.csproj", "{46934685-F114-6210-2B49-373C6FDC55ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaGenerate", "KafkaGenerate\KafkaGenerate.csproj", "{BB854FB1-B74C-4D5D-B548-28E8E92A3359}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +72,18 @@ Global
 		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3F5E7F7-70C5-4CBF-901C-D9DE2696216E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24BD428E-23BA-24D7-F811-9B0617AC0EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BD428E-23BA-24D7-F811-9B0617AC0EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BD428E-23BA-24D7-F811-9B0617AC0EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BD428E-23BA-24D7-F811-9B0617AC0EE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46934685-F114-6210-2B49-373C6FDC55ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46934685-F114-6210-2B49-373C6FDC55ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46934685-F114-6210-2B49-373C6FDC55ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46934685-F114-6210-2B49-373C6FDC55ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB854FB1-B74C-4D5D-B548-28E8E92A3359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB854FB1-B74C-4D5D-B548-28E8E92A3359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB854FB1-B74C-4D5D-B548-28E8E92A3359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB854FB1-B74C-4D5D-B548-28E8E92A3359}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +97,9 @@ Global
 		{33DB8675-A466-794B-963E-43374848BBF3} = {35FC648C-244F-61BA-7BAF-5698EF070C1C}
 		{9CB30875-8FD2-9B9E-65BD-A92594FC2CD9} = {35FC648C-244F-61BA-7BAF-5698EF070C1C}
 		{BDF868A3-B76F-2C94-B7D2-C88EA1CC23CC} = {35FC648C-244F-61BA-7BAF-5698EF070C1C}
+		{24BD428E-23BA-24D7-F811-9B0617AC0EE8} = {9CB30875-8FD2-9B9E-65BD-A92594FC2CD9}
+		{46934685-F114-6210-2B49-373C6FDC55ED} = {9CB30875-8FD2-9B9E-65BD-A92594FC2CD9}
+		{BB854FB1-B74C-4D5D-B548-28E8E92A3359} = {9CB30875-8FD2-9B9E-65BD-A92594FC2CD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53BB6971-D5F3-424B-9D91-17F2CF6FB044}

@@ -1,9 +1,15 @@
-using Aspire.Hosting;
 using CommunityToolkit.Aspire.Hosting.Dapr;
+using NapalmCodes.Aspire.Hosting.Krakend;
 
 IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(args);
 
 var redis = builder.AddRedis("redis");
+
+var krakend = builder.AddKrakend("gateway", "./krakend.json", port: 8080)
+    .WithExternalHttpEndpoints();
+
+var kafka = builder.AddKafka("kafka")
+                   .WithKafkaUI(kafkaUI => kafkaUI.WithHostPort(9100));
 
 var statestore = builder.AddDaprStateStore(
     "statestore",
@@ -67,5 +73,11 @@ var api = builder
     .WithDaprSidecar();
 
 migration.WithParentRelationship(api);
+
+builder.AddProject<Projects.KafkaProducer>("kafkaproducer")
+    .WithReference(kafka).WaitFor(kafka);
+
+builder.AddProject<Projects.KafkaConsumer>("kafkaconsumer")
+    .WithReference(kafka).WaitFor(kafka);
 
 await builder.Build().RunAsync().ConfigureAwait(false);
