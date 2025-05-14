@@ -26,6 +26,8 @@
 		<ProjectReference Include="..\CleanPatternWithCloudNative\src\CleanPatternWithCloudNative.MigrationService\CleanPatternWithCloudNative.MigrationService.csproj" />
 		<ProjectReference Include="..\KafkaConsumer\KafkaConsumer.csproj" />
 		<ProjectReference Include="..\KafkaProducer\KafkaProducer.csproj" />
+		<ProjectReference Include="..\RabbitMqPublisher\RabbitMqPublisher.csproj" />
+		<ProjectReference Include="..\RabbitMqSubsciber\RabbitMqSubsciber.csproj" />
 		<ProjectReference Include="..\VerticalSliceApi\src\VerticalSliceApi\VerticalSliceApi.csproj" />
 	</ItemGroup>
 </Project>

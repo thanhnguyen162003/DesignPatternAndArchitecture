@@ -86,4 +86,8 @@ builder.AddProject<Projects.KafkaConsumer>("kafkaconsumer")
 builder.AddProject<Projects.VerticalSliceApi>("verticalsliceapi")
     .WithReference(dbVerticalSlice).WaitFor(dbVerticalSlice);
 
+builder.AddProject<Projects.RabbitMqPublisher>("rabbitmqpublisher");
+
+builder.AddProject<Projects.RabbitMqSubsciber>("rabbitmqsubsciber");
+
 await builder.Build().RunAsync().ConfigureAwait(false);

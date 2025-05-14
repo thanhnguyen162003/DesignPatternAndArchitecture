@@ -4,8 +4,8 @@ Checklist on roadmap
 
 ## Clean Architecture
 - [x] `CQRS`
-    - [ ] Commands with `PostgreSql` + `EF Core`
-    - [ ] Queries with `MongoDB` + `EF Core`
+    - [X] Commands with `PostgreSql` + `EF Core`
+    - [X] Queries with `MongoDB` + `EF Core`
     - [ ] CDC using Debezium
 - [x] `MediatR`
 
@@ -13,7 +13,24 @@ Checklist on roadmap
 > Replace with Vertical Slice Architecture
 
 ## Microservice
->Todo
+- [x] ApacheKafka
+    - [x] Producer, producer batch
+    - [x] Consumer, consumer batch
+    - [x] Generate kafka topic, configuration using code
+
+- [x] RabbitMq
+    - [ ] Publish, Subscribe message
+    - [ ] Fanout Pattern
+    - [ ] Implement kafka pattern into rabbitmq
+
+- [x] Krakend (API Gateway)
+    - [ ] Configuration json krakend
+    - [ ] Optimise
+    - [ ] Register into Aspire
+
+- [x] Dapr
+    - [ ] Configuration for switch kafka and rabbitmq pubsub easy
+    - [ ] State management
 
 ## Orchestration
 
@@ -22,6 +39,10 @@ Checklist on roadmap
     - [ ] NoSQL - `MongoDB`
     - [x] Distributed Cache - `Redis`
     - [x] Aspire Dashboard
+    - [x] Apache Kafka with KafkaUI
+    - [x] RabbitMQ
+    - [x] Krakend with dashboard
+    - [ ] ...
 
 ## Health Checks
 
