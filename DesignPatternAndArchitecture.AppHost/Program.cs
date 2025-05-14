@@ -50,12 +50,15 @@ IResourceBuilder<IDaprComponentResource> cron = builder.AddDaprComponent(
     });
 
 var server = builder
-    .AddPostgres("cleanpatternwithcloudnative-db")
+    .AddPostgres("postgres")
     .WithLifetime(ContainerLifetime.Persistent)
-    .WithPgAdmin();
+    .WithPgAdmin(pgAdmin => pgAdmin.WithHostPort(5050));
 
 var db = server
     .AddDatabase("cleanpatternwithcloudnativedb");
+
+var dbVerticalSlice = server
+    .AddDatabase("verticalslicedb");
 
 var migration = builder
     .AddProject<Projects.CleanPatternWithCloudNative_MigrationService>("migrations")
@@ -79,5 +82,8 @@ builder.AddProject<Projects.KafkaProducer>("kafkaproducer")
 
 builder.AddProject<Projects.KafkaConsumer>("kafkaconsumer")
     .WithReference(kafka).WaitFor(kafka);
+
+builder.AddProject<Projects.VerticalSliceApi>("verticalsliceapi")
+    .WithReference(dbVerticalSlice).WaitFor(dbVerticalSlice);
 
 await builder.Build().RunAsync().ConfigureAwait(false);
