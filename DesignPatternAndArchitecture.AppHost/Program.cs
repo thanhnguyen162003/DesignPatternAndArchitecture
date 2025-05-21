@@ -5,7 +5,9 @@ IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(ar
 
 var redis = builder.AddRedis("redis");
 
-var krakend = builder.AddKrakend("gateway", "./krakend.json", port: 8080)
+var rabbitmq = builder.AddRabbitMQ("messaging").WithManagementPlugin();
+
+var krakend = builder.AddKrakend("gateway", "../krakend.json", port: 8080)
     .WithExternalHttpEndpoints();
 
 var kafka = builder.AddKafka("kafka")
@@ -54,6 +56,7 @@ var server = builder
     .WithLifetime(ContainerLifetime.Persistent)
     .WithPgAdmin(pgAdmin => pgAdmin.WithHostPort(5050));
 
+//the add database in aspire just add aa connection string to it, not real physical db. so need to init db in each project
 var db = server
     .AddDatabase("cleanpatternwithcloudnativedb");
 
@@ -86,8 +89,10 @@ builder.AddProject<Projects.KafkaConsumer>("kafkaconsumer")
 builder.AddProject<Projects.VerticalSliceApi>("verticalsliceapi")
     .WithReference(dbVerticalSlice).WaitFor(dbVerticalSlice);
 
-builder.AddProject<Projects.RabbitMqPublisher>("rabbitmqpublisher");
+builder.AddProject<Projects.RabbitMqPublisher>("rabbitmqpublisher")
+    .WithReference(rabbitmq).WaitFor(rabbitmq);
 
-builder.AddProject<Projects.RabbitMqSubsciber>("rabbitmqsubsciber");
+builder.AddProject<Projects.RabbitMqSubsciber>("rabbitmqsubsciber")
+        .WithReference(rabbitmq).WaitFor(rabbitmq);
 
 await builder.Build().RunAsync().ConfigureAwait(false);

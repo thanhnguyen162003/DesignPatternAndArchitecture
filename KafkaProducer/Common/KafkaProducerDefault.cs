@@ -17,10 +17,10 @@ namespace KafkaProducer.Common
             var producerConfig = new ProducerConfig
             {
                 BootstrapServers = configuration["Kafka:BootstrapServers"],
-                SaslUsername = configuration["Kafka:SaslUsername"],
-                SaslPassword = configuration["Kafka:SaslPassword"],
-                SecurityProtocol = SecurityProtocol.SaslSsl,
-                SaslMechanism = SaslMechanism.Plain,
+                //SaslUsername = configuration["Kafka:SaslUsername"],
+                //SaslPassword = configuration["Kafka:SaslPassword"],
+                //SecurityProtocol = SecurityProtocol.SaslSsl,
+                //SaslMechanism = SaslMechanism.Plain,
                 MessageSendMaxRetries = 3,
                 Acks = Acks.All,
                 CompressionType = CompressionType.Gzip,

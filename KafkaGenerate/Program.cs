@@ -7,17 +7,17 @@ namespace KafkaTopicCreator
     {
         static async Task Main(string[] args)
         {
-            var bootstrapServers = "";
-            var saslUsername = "";
-            var saslPassword = "";
+            var bootstrapServers = "kafka:9092";
+            //var saslUsername = "";
+            //var saslPassword = "";
 
             var config = new AdminClientConfig
             {
                 BootstrapServers = bootstrapServers,
-                SaslMechanism = SaslMechanism.Plain,
-                SecurityProtocol = SecurityProtocol.SaslSsl,
-                SaslUsername = saslUsername,
-                SaslPassword = saslPassword
+                //SaslMechanism = SaslMechanism.Plain,
+                //SecurityProtocol = SecurityProtocol.SaslSsl,
+                //SaslUsername = saslUsername,
+                //SaslPassword = saslPassword
             };
 
             var topicsWithThreePartitions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)

@@ -1,16 +1,19 @@
+using KafkaProducer.Common;
+using KafkaProducer.Common.Models;
+using KafkaProducer.Intefaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddSingleton<IKafkaProducerDefault, KafkaProducerDefault>();
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -18,25 +21,23 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
-app.MapGet("/weatherforecast", () =>
+app.MapPost("/data", async (IKafkaProducerDefault producer) =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    DataModelProduce data = new DataModelProduce()
+    {
+        Id = Guid.NewGuid(),
+        Name = "Test",
+        Payload = "Test"
+    };
+    await producer.ProduceObjectWithKeyAsync("test-topic", "key", data);
+    return new ResponseModel(System.Net.HttpStatusCode.OK, "Produced to Kafka");
+}).WithName("data");
 
+app.MapGet("/data", () =>
+{
+    return new ResponseModel(System.Net.HttpStatusCode.OK, "OK"); ;
+}).WithName("data");
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
