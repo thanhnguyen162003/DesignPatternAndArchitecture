@@ -1,4 +1,6 @@
-﻿namespace VerticalSliceApi.Features.Games
+﻿using FastEndpoints.Validation;
+
+namespace VerticalSliceApi.Features.Games
 {
     public sealed record NewGameRequest(string Name);
 
@@ -24,7 +26,7 @@
             CancellationToken cancellationToken
         )
         {
-            var game = new Game(GameId.FromNewGuid(), request.Name);
+            var game = new Game((GameId)Guid.CreateVersion7(), request.Name);
             db.Add(game);
             await db.SaveChangesAsync(cancellationToken);
 

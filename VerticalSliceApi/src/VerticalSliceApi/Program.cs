@@ -1,6 +1,5 @@
 using System.Text.Json.Serialization;
 using FastEndpoints.Swagger;
-using Microsoft.EntityFrameworkCore;
 
 [assembly: VogenDefaults(customizations: Customizations.AddFactoryMethodForGuids)]
 
