@@ -1,0 +1,34 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "catalog": {
+        "ClusterId": "catalog",
+        "Match": {
+          "Path": "/catalog/{**catch-all}"
+        }
+      },
+      "basket": {
+        "ClusterId": "basket",
+        "Match": {
+          "Path": "/basket/{**catch-all}"
+        }
+      }
+    },
+    "Clusters": {
+      "catalog": {
+        "Destinations": {
+          "catalog/d1": {
+            "Address": "http://catalog/"
+          }
+        }
+      },
+      "basket": {
+        "Destinations": {
+          "basket/d1": {
+            "Address": "http://basket/"
+          }
+        }
+      }
+    }
+  }
+}

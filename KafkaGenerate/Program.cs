@@ -7,7 +7,7 @@ namespace KafkaTopicCreator
     {
         static async Task Main(string[] args)
         {
-            var bootstrapServers = "kafka:9092";
+            var bootstrapServers = "broker:9092";
             //var saslUsername = "";
             //var saslPassword = "";
 

@@ -44,6 +44,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqPublisher", "Rabbit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqSubsciber", "RabbitMqSubsciber\RabbitMqSubsciber.csproj", "{F08000E9-73B5-F920-3B54-CDDF59C19AF3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YarpApiGateway", "YarpApiGateway", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		yarp.json = yarp.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +126,7 @@ Global
 		{2DCD3C5B-18EB-4703-9361-A52E9DE48CF3} = {4E71EFC4-6766-84C7-2E67-D62F57D22D73}
 		{294A3AD6-724F-7AB1-E12D-74435CBB9953} = {BDF868A3-B76F-2C94-B7D2-C88EA1CC23CC}
 		{F08000E9-73B5-F920-3B54-CDDF59C19AF3} = {BDF868A3-B76F-2C94-B7D2-C88EA1CC23CC}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {35FC648C-244F-61BA-7BAF-5698EF070C1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53BB6971-D5F3-424B-9D91-17F2CF6FB044}

@@ -1,3 +1,4 @@
+﻿using Aspire.Hosting;
 using CommunityToolkit.Aspire.Hosting.Dapr;
 using NapalmCodes.Aspire.Hosting.Krakend;
 
@@ -5,9 +6,12 @@ IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(ar
 
 var redis = builder.AddRedis("redis");
 
+// hide resources new in 9.3.0
+var apiKey = builder.AddParameter("api-key", secret: true);
+
 var rabbitmq = builder.AddRabbitMQ("messaging").WithManagementPlugin();
 
-var krakend = builder.AddKrakend("gateway", "../krakend.json", port: 8080)
+var krakend = builder.AddKrakend("kradend-gateway", "../krakend.json", port: 8080)
     .WithExternalHttpEndpoints();
 
 var kafka = builder.AddKafka("kafka")
@@ -96,3 +100,39 @@ builder.AddProject<Projects.RabbitMqSubsciber>("rabbitmqsubsciber")
         .WithReference(rabbitmq).WaitFor(rabbitmq);
 
 await builder.Build().RunAsync().ConfigureAwait(false);
+
+
+
+// new in 9.3.0
+//var yarp = builder.AddYarp("yarp-gateway")
+//    .WithConfigFile("yarp.json")
+//    .WithExternalHttpEndpoints();
+
+/* .NET Aspire 9.3 has preview support for the following environment resources:
+
+    AddDockerComposeEnvironment(...)
+    AddKubernetesEnvironment(...)
+    AddAzureContainerAppEnvironment(...)
+    AddAzureAppServiceEnvironment(...) — see new App Service support →
+
+These represent deployment targets that can transform and emit infrastructure-specific artifacts from your app model. */
+
+/*---------- new in 9.3.0 environment variable for each services --------------------*/
+//var k8s = builder.AddKubernetesEnvironment("k8s-env");
+//var compose = builder.AddDockerComposeEnvironment("docker-env");
+
+//builder.AddProject<Projects.Api>("api")
+//       .WithComputeEnvironment(compose);
+
+//builder.AddProject<Projects.Frontend>("frontend")
+//       .WithComputeEnvironment(k8s);
+
+/*------------------------ Deploy to Azure App Service ------------------------------*/
+//var env = builder.AddAzureAppServiceEnvironment("env");
+
+//builder.AddProject<Projects.Api>("api")
+//       .WithExternalHttpEndpoints()
+//       .PublishAsAzureAppServiceWebsite((infra, site) =>
+//       {
+//           site.SiteConfig.IsWebSocketsEnabled = true;
+//       });
