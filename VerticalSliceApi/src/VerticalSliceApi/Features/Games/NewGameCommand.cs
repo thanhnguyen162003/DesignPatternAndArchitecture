@@ -1,6 +1,4 @@
-﻿using FastEndpoints.Validation;
-
-namespace VerticalSliceApi.Features.Games
+﻿namespace VerticalSliceApi.Features.Games
 {
     public sealed record NewGameRequest(string Name);
 

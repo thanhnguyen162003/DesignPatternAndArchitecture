@@ -8,15 +8,28 @@
         public GameState State { get; set; }
     }
 
-    [Mapper]
     public static partial class GameResponseMapper
     {
-        [MapProperty(nameof(Game.Board), nameof(Board), Use = nameof(MapBoard))]
-        public static partial GameResponse ToResponse(this Game source);
+        public static GameResponse ToResponse(this Game source)
+        {
+            return new GameResponse
+            {
+                Name = source.Name,
+                State = source.State,
+                Board = MapBoard(source.Board)
+            };
+        }
 
-        public static partial IQueryable<GameResponse> ProjectToResponse(this IQueryable<Game> q);
+        public static IQueryable<GameResponse> ProjectToResponse(this IQueryable<Game> q)
+        {
+            return q.Select(g => new GameResponse
+            {
+                Name = g.Name,
+                State = g.State,
+                Board = null // Cannot map complex types in projections
+            });
+        }
 
-        [UserMapping(Default = false)]
         private static char[][]? MapBoard(Board? board) =>
             board?.Value.Select(row => row.Select(GetTileChar).ToArray()).ToArray();
 
